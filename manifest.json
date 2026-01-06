@@ -1,0 +1,11 @@
+{
+    "name": "ST Mobile Companion",
+    "version": "1.0.0",
+    "description": "一个集成在SillyTavern内的沉浸式小手机界面",
+    "author": "Jasmine",
+    "license": "MIT",
+    "namespace": "st_mobile_companion",
+    "match": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
+    "icon": "assets/icon.png",
+    "grant": ["GM_addStyle", "GM_getValue", "GM_setValue"]
+}

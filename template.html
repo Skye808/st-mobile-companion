@@ -1,0 +1,107 @@
+    <!-- 第一屏：锁屏界面 -->
+    <div id="lock-screen" class="screen">
+        <div class="phone-frame">
+            <div class="dynamic-island"></div>
+            <div class="phone-screen">
+                <!-- 时间显示 -->
+                <div id="clock" class="lock-screen-clock">00:00</div>
+                <!-- 日期显示 -->
+                <div id="date" class="lock-screen-date">MM月DD日 星期X</div>
+                <!-- 通知区域 -->
+                <div id="notification-container" class="notification-container"></div>
+                <!-- 滑动解锁区域 -->
+                <div class="unlock-area">
+                    <div class="unlock-circle" id="unlock-circle">
+                        <div class="unlock-arrow">↑</div>
+                    </div>
+                    <div class="unlock-text">向上滑动解锁</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二屏：主屏幕 -->
+    <div id="home-screen" class="screen" style="display: none;">
+        <div class="phone-frame">
+            <div class="dynamic-island"></div>
+            <div class="phone-screen" style="border-radius: 20px;">
+                <!-- 状态栏占位 -->
+                <div style="height: 40px;"></div>
+                <!-- 网格化应用图标 -->
+                <div class="app-grid">
+                    <!-- 微信图标 -->
+                    <div class="app-icon" data-app="wechat">
+                        <div class="app-icon-inner">
+                            <div class="app-icon-img" style="background: linear-gradient(135deg, #07C160, #05a050);">微</div>
+                            <div class="app-icon-label">微信</div>
+                        </div>
+                    </div>
+                    <!-- 锁屏图标 -->
+                    <div class="app-icon" id="back-to-lock">
+                        <div class="app-icon-inner">
+                            <div class="app-icon-img" style="background: linear-gradient(135deg, #8E8E93, #6C6C70);">锁</div>
+                            <div class="app-icon-label">锁屏</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 注意：Dock栏已完全删除 -->
+            </div>
+        </div>
+    </div>
+
+<!-- 第三屏：微信应用（双标签页） -->
+<div id="chat-screen" class="screen" style="display: none;">
+    <div class="phone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen wechat-container">
+            <!-- 顶部标题栏 -->
+            <div class="wechat-top-bar">
+                <button id="back-to-home">←</button>
+                <div id="wechat-title">微信</div>
+            </div>
+            
+            <!-- 双标签页内容 -->
+            <div class="wechat-tab-content">
+                <!-- 消息列表页（默认显示） -->
+                <div id="tab-msglist" class="wechat-tab active">
+                    <div id="message-list" class="message-list">
+                        <!-- 消息会动态添加到这里 -->
+                    </div>
+                    <!-- 输入区域（只在消息页显示） -->
+                    <div class="input-area">
+                        <input type="text" id="chat-input" placeholder="输入消息..." />
+                        <button id="send-button">发送</button>
+                    </div>
+                </div>
+                
+                <!-- 联系人页 -->
+                <div id="tab-contacts" class="wechat-tab">
+                    <div class="contacts-container">
+                        <!-- 添加好友区域 -->
+                        <div class="add-friend-section">
+                            <input type="text" id="friend-name-input" placeholder="输入好友名字" />
+                            <input type="text" id="friend-avatar-input" placeholder="头像URL（可选）" />
+                            <button id="add-friend-btn">添加好友</button>
+                        </div>
+                        <!-- 好友列表 -->
+                        <div id="contacts-list" class="contacts-list">
+                            <!-- 好友会动态添加到这里 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 底部双标签栏 -->
+            <div class="wechat-tab-bar">
+                <div class="tab-bar-item active" data-tab="msglist">
+                    <div class="tab-icon">💬</div>
+                    <div class="tab-label">消息</div>
+                </div>
+                <div class="tab-bar-item" data-tab="contacts">
+                    <div class="tab-icon">👥</div>
+                    <div class="tab-label">联系人</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
