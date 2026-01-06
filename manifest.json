@@ -1,11 +1,12 @@
 {
-    "name": "ST Mobile Companion",
-    "version": "1.0.0",
-    "description": "一个集成在SillyTavern内的沉浸式小手机界面",
+    "display_name": "ST小手机伴侣",
+    "loading_order": 99,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "styles/main.css",
     "author": "Jasmine",
-    "license": "MIT",
-    "namespace": "st_mobile_companion",
-    "match": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
-    "icon": "assets/icon.png",
-    "grant": ["GM_addStyle", "GM_getValue", "GM_setValue"]
+    "version": "1.0.0",
+    "homePage": "https://github.com/Skye808/st-mobile-conpanion.git",
+    "description": "沉浸式微信风格小手机界面，支持好友系统和消息协议"
 }
