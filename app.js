@@ -513,4 +513,26 @@ function initApp() {
 
 // ========== 启动 ==========
 // 等待容器完全注入后初始化
-setTimeout(initApp, 500);
+// 检查是否已经有容器，如果有就直接初始化
+if (document.getElementById('st-mobile-companion-container')) {
+    console.log('[小手机] 容器已存在，直接初始化');
+    setTimeout(initApp, 500);
+} else {
+    console.log('[小手机] 等待容器注入...');
+    // 如果容器不存在，等待插件系统注入
+    const checkContainer = setInterval(() => {
+        if (document.getElementById('st-mobile-companion-container')) {
+            clearInterval(checkContainer);
+            console.log('[小手机] 容器已注入，开始初始化');
+            setTimeout(initApp, 500);
+        } else {
+            console.log('[小手机] 容器未找到，继续等待...');
+        }
+    }, 1000);
+    
+    // 最多等待30秒
+    setTimeout(() => {
+        clearInterval(checkContainer);
+        console.warn('[小手机] 容器注入超时');
+    }, 30000);
+}
